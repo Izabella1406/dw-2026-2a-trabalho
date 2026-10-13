@@ -31,7 +31,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 - Núria Vitória Ferreira da Silva
 - Otávio Augusto Oliveira Silva
 - Pyêtro Emanuel Batista do Nascimento
-- Quezia Oliveira Leite
+- Quezia Oliveira Leites
 - Rafael Ferreira Felipe
 - Rebeca Silva Pereira
 - Sofhia Parreira Dias
