@@ -20,7 +20,7 @@ Possui a documentação do banco. Contém relacionamentos `n:n`.
 - Izabela Lima Oliveira
 - Izabella Bastos Avelar
 - Jean Paul Rodrigues Flauzino Filho
-- Joseane Souza Nunes
+- Joseane Souza Nunes o [@joseanenunes-commits](https://github.com/joseanenunes-commits)
 - Lavínya Karolinne Costa Oliveira
 - Luís Arthur Morais Belo
 - Luíz Otávio Oliveira Silva
