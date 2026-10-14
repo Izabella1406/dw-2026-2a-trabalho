@@ -1,20 +1,46 @@
-<!DOCTYPE html>
+ <?php
+
+ require_once 'conexao.php';
+
+ $sql = "SELECT postagem.*, usuario.nome, usuario.apelido, usuario.foto FROM postagem INNER JOIN usuario ON postagem.idusuario = usuario.idusuario ORDER BY postagem.data_hora DESC";
+ 
+ $resultados = mysqli_query($conexao, $sql);
+?>
+ 
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Meu Feed</title>
+
 </head>
 <body>
-    <form action="verificar_login.php" method="post">
-        E-mail: <br>
-        <input type="text" name="email"> <br><br>
-        Senha: <br>
-        <input type="text" name="senha"> <br><br>
+   <header>
+      <h1>Pop Feed</h1>
+   </header>
 
-        <input type="submit" value="Logar">
+   <main>
+    <h2>Publicações</h2>
 
-        <a href="form_usuario.php">Não tem conta? Crie agora!</a>
-    </form>
+    <?php
+    while ($post = mysqli_fetch_assoc($resultados)) {
+    ?>
+
+     <div class="post">
+        <p><?php echo $post["texto"]; ?></p>
+
+        <small>
+           <?php echo $post["data_hora"]; ?>
+        </small>
+
+     </div>
+
+    <?php
+    }
+    ?>
+
+   </main>
+
 </body>
 </html>
