@@ -1,11 +1,22 @@
- <?php
-
- require_once 'conexao.php';
-
- $sql = "SELECT postagem.*, usuario.nome, usuario.apelido, usuario.foto FROM postagem INNER JOIN usuario ON postagem.idusuario = usuario.idusuario ORDER BY postagem.data_hora DESC";
- 
- $resultados = mysqli_query($conexao, $sql);
-?>
+SELECT
+	u.nome AS autor,
+    p.texto AS conteudo,
+    COUNT(DISTINCT c.idcomentario) AS quantidade_comentarios,
+    COUNT(DISTINCT c2.idusuario) AS quantidade_curtidas,
+    (
+		COUNT(DISTINCT c.idcomentario) + COUNT(DISTINCT c2.idusuario)
+	) AS popularidade
+FROM postagem p INNER JOIN usuario u ON p.idusuario = u.idusuario
+LEFT JOIN comentario c
+   ON p.idpostagem = c.idpostagem
+LEFT JOIN curtida c2
+ON p.idpostagem = c2.idpostagem
+WHERE p.idusuario <> 3
+GROUP BY
+	p.idpostagem,
+    u.nome,
+    p.texto
+ORDER BY popularidade DESC;   
  
  <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +50,7 @@
     <?php
     }
     ?>
+   
 
    </main>
 
