@@ -36,7 +36,7 @@ $resultados = mysqli_query($conexao, $sql);
 </head>
 <body>
    <header>
-      <h1>Pop Feeddsferg</h1>
+      <h1>Pop Feed</h1>
    </header>
 
    <main>
