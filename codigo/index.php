@@ -35,10 +35,16 @@ $resultados = mysqli_query($conexao, $sql);
 
 </head>
 <body>
-   <header>
-      <h1>Pop Feed</h1>
-   </header>
+   <header class="cabecalho">
+    <div class="logo">
+        <span class="icone-logo">🧭</span>
 
+        <div>
+            <h1>POP FEED</h1>
+            <p>Descubra publicações populares da nossa rede!</p>
+        </div>
+    </div>
+</header>
    <main>
     <h2>Publicações</h2>
 
@@ -46,13 +52,39 @@ $resultados = mysqli_query($conexao, $sql);
     while ($post = mysqli_fetch_assoc($resultados)) {
     ?>
 
-     <div class="post">
-        <p>Autor: <?php echo $post["autor"]; ?></p>  
-        <p><?php echo $post["conteudo"]; ?></p>
-        <p>Comentários: <?php echo $post["quantidade_comentarios"]; ?></p>
-        <p>Curtidas: <?php echo $post["quantidade_curtidas"]; ?></p>
+    
+<div class="post">
 
-     </div>
+    <div class="autor">
+        <div class="avatar">👤</div>
+
+        <h3>
+            <?php echo $post["autor"]; ?>
+        </h3>
+    </div>
+
+    <p class="conteudo">
+        <?php echo $post["conteudo"]; ?>
+    </p>
+
+    <div class="interacoes">
+
+        <span class="curtidas">
+            ♥
+            <?php echo $post["quantidade_curtidas"]; ?>
+            curtidas
+        </span>
+
+        <span class="comentarios">
+            💬
+            <?php echo $post["quantidade_comentarios"]; ?>
+            comentários
+        </span>
+
+    </div>
+
+</div>
+
 
     <?php
     }

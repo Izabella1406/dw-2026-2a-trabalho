@@ -58,3 +58,65 @@ h2 {
     box-shadow: 0 5px 16px rgba(40, 45, 80, 0.12);
 
 }
+
+.autor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.avatar {
+    background-color: #e1e5f5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.autor h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.cabecalho {
+    background-color: rgb(218, 189, 210);
+    padding: 25px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.icone-logo {
+    background-color: #6254d9;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.cabecalho h1 {
+    color: #6254d9;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.cabecalho p {
+    color: #777d91;
+    font-size: 14px;
+}
